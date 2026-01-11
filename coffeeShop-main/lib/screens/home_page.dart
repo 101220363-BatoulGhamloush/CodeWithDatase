@@ -35,16 +35,7 @@ class _HomePageState extends State<HomePage> {
   List<Drink>? expressoDrinks;
   
   final FavoriteStorage favoriteStorage=FavoriteStorage();
- void increment(CartItem item) async {
-  final newQuantity = item.numberOfItems + 1;
-
-  await CartStorage().updateCartItem(item.id as int, newQuantity);
-
-  setState(() {
-    item.numberOfItems = newQuantity;
-  });
-}
-
+ 
 
   Future<void> loadCart() async{
     List<CartItem> item=await CartStorage().loadCartItems();
@@ -154,6 +145,7 @@ class _HomePageState extends State<HomePage> {
 
       return true;
     }).toList();
+    
     return Padding(
       padding: EdgeInsetsGeometry.symmetric(horizontal: 20, vertical: 22),
       child: Column(

@@ -8,7 +8,7 @@ class FavoriteStorage {
     final db = await CoffeeDatabase().getDatabase();
 
     await db.insert('favorites', {
-      'id': drink.name, // أو أي id مميز
+      'id': drink.id, // أو أي id مميز
       'name': drink.name,
       'image': drink.imagePath,
       'price': drink.price,
